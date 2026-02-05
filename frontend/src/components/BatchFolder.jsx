@@ -11,29 +11,29 @@ const BatchFolder = ({ batch }) => {
       {!isOpen && (
         <div
           onClick={() => setIsOpen(true)}
-          className="group cursor-pointer bg-linear-to-br from-slate-800/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2"
+          className="group cursor-pointer bg-white rounded-2xl p-8 border border-gray-100 hover:border-purple-200 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
         >
           {/* Folder icon */}
           <div className="mb-6 text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
-            <svg 
-              className="w-16 h-16 mx-auto" 
-              fill="currentColor" 
+            <svg
+              className="w-16 h-16 mx-auto"
+              fill="currentColor"
               viewBox="0 0 20 20"
             >
               <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
             </svg>
           </div>
-          
+
           {/* Batch year */}
           <h3 className="text-4xl font-bold text-center bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent mb-2">
             Batch {batch.year}
           </h3>
-          
+
           {/* Member count */}
-          <p className="text-gray-400 text-center text-sm">
+          <p className="text-gray-500 text-center text-sm">
             {batch.members.length} {batch.members.length === 1 ? 'Artist' : 'Artists'}
           </p>
-          
+
           {/* Hover indicator */}
           <div className="mt-6 text-center">
             <span className="text-purple-400/70 text-sm group-hover:text-purple-300 transition-colors">
@@ -45,7 +45,7 @@ const BatchFolder = ({ batch }) => {
 
       {/* Folder card - open state */}
       {isOpen && (
-        <div className="bg-linear-to-br from-slate-800/80 to-purple-900/50 backdrop-blur-md rounded-2xl p-6 border border-purple-400/30 shadow-2xl shadow-purple-500/20 animate-fade-in">
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-gray-200 shadow-2xl shadow-purple-500/10 animate-fade-in">
           {/* Header with close button */}
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-3xl font-bold bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">

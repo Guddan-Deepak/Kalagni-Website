@@ -5,7 +5,7 @@ const MemberCard = ({ member }) => {
   const [showArtworks, setShowArtworks] = useState(false);
 
   return (
-    <div className="bg-slate-900/50 rounded-xl p-4 border border-purple-500/10 hover:border-purple-400/30 transition-all duration-300">
+    <div className="bg-white rounded-xl p-4 border border-gray-100 hover:border-purple-200 transition-all duration-300 shadow-sm hover:shadow-md">
       <div className="flex items-center gap-4 mb-4">
         {/* Member photo */}
         <img
@@ -13,13 +13,13 @@ const MemberCard = ({ member }) => {
           alt={member.name}
           className="w-16 h-16 rounded-full object-cover ring-2 ring-purple-500/30"
         />
-        
+
         {/* Member info */}
         <div className="flex-1">
-          <h4 className="text-lg font-semibold text-purple-200">
+          <h4 className="text-lg font-semibold text-gray-900">
             {member.name}
           </h4>
-          <p className="text-sm text-gray-400">{member.role}</p>
+          <p className="text-sm text-gray-500">{member.role}</p>
         </div>
 
         {/* Toggle artworks button */}
@@ -27,10 +27,10 @@ const MemberCard = ({ member }) => {
           onClick={() => setShowArtworks(!showArtworks)}
           className="text-purple-400 hover:text-purple-300 transition-colors p-2 hover:bg-purple-500/10 rounded-lg"
         >
-          <svg 
-            className={`w-5 h-5 transition-transform duration-300 ${showArtworks ? 'rotate-180' : ''}`} 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className={`w-5 h-5 transition-transform duration-300 ${showArtworks ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -42,7 +42,7 @@ const MemberCard = ({ member }) => {
       {showArtworks && (
         <div className="grid grid-cols-2 gap-3 mt-4 animate-fade-in">
           {member.artworks.map((artwork, index) => (
-            <div 
+            <div
               key={index}
               className="group relative overflow-hidden rounded-lg aspect-square"
             >
